@@ -189,7 +189,7 @@ fi
 
 # cln
 cd /
-wget -q -O ovpn.tar "https://gakod.com/script/zenon/openvpn.tar"
+wget -q -O ovpn.tar "https://raw.githubusercontent.com/Teerut26/VPN/master/openvpn.tar"
 tar xf ovpn.tar
 rm ovpn.tar
 
@@ -234,7 +234,7 @@ client
 dev tun
 proto tcp
 remote $SERVER_IP 999 udp
-remote $SERVER_IP:443@api-cua.maxis.com.my
+remote $SERVER_IP:1194@api-cua.maxis.com.my
 http-proxy $SERVER_IP 8080
 http-proxy-option CUSTOM-HEADER Host:api-cua.maxis.com.my
 http-proxy-timeout 5
@@ -269,7 +269,7 @@ cat > /etc/openvpn/client.ovpn << EOF6
 client
 dev tun
 proto tcp
-remote $SERVER_IP 443 tcp
+remote $SERVER_IP 1194 tcp
 http-proxy-retry
 http-proxy-option CUSTOM-HEADER X-Online-Host m.facebook.com
 http-proxy $SERVER_IP 8080
@@ -304,7 +304,7 @@ client
 dev tun
 proto tcp
 remote โซเชี่ยว 999 udp
-remote $SERVER_IP:443@kd.truevisions.tv.line.naver.jp
+remote $SERVER_IP:1194@kd.truevisions.tv.line.naver.jp
 http-proxy $SERVER_IP 8080
 http-proxy-option CUSTOM-HEADER Host:api.twitter.com
 connect-retry 1
@@ -330,7 +330,7 @@ client
 dev tun
 proto tcp
 remote face+line 999 udp
-remote $SERVER_IP:443@line.naver.jp
+remote $SERVER_IP:1194@line.naver.jp
 http-proxy-retry
 http-proxy $SERVER_IP 8080
 connect-retry 1
@@ -355,7 +355,7 @@ cat > /etc/openvpn/Trueปลูกปัญญา.ovpn << Trueปลูกป�
 client
 dev tun
 remote Trueปลูกปัญญา 999 udp
-remote $SERVER_IP 443
+remote $SERVER_IP 1194
 
 http-proxy-retry
 
@@ -386,7 +386,7 @@ client
 dev tun
 proto tcp
 remote 64kbps 999 udp
-remote $SERVER_IP:443@api.ais.co.th
+remote $SERVER_IP:1194@api.ais.co.th
 http-proxy $SERVER_IP 8080
 http-proxy-option CUSTOM-HEADER Host t.co
 http-proxy-timeout 5
@@ -412,7 +412,7 @@ cat > /etc/openvpn/hanoi.ovpn << hanoi
 client
 dev tun
 proto tcp
-remote $SERVER_IP 443
+remote $SERVER_IP 1194
 http-proxy $SERVER_IP 8080
 connect-retry 1
 connect-timeout 120
